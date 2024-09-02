@@ -1,0 +1,41 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.field {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-self: center;
+    align-items: left;
+    gap: 10px;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.button {
+    border-radius: 5px;
+    width: 100px;
+    color: white;
+    background: gray;
+    font-size: 14px;
+    font-weight: 400;
+    height: 41px;
+}
+
+.button:hover {
+    color: black;
+    background: white;
+    font-weight: 600;
+}
