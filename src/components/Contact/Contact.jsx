@@ -1,12 +1,12 @@
-import { useDispatch } from "react-redux";
-import { deleteContact } from '../../redux/contactsSlice';
-import css from "./Contact.module.css";
-import { FaUser, FaPhone } from "react-icons/fa";
+import css from './Contact.module.css';
+import { FaUser } from 'react-icons/fa';
+import { FiActivity } from "react-icons/fi";
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contactsOps';
 
-const Contact = ({ contact }) => {
+const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
-
-  const handleDelete = (id) => {
+  const onDeleteContact = id => {
     dispatch(deleteContact(id));
   };
 
@@ -14,13 +14,14 @@ const Contact = ({ contact }) => {
     <div className={css.card}>
       <div className={css.wrapper}>
         <p className={css.field}>
-          <FaUser /> {contact.name}
+          <FaUser /> {name}
         </p>
         <p className={css.field}>
-          <FaPhone /> {contact.number}
-        </p>
+        <FiActivity />
+        {number}
+      </p>
       </div>
-      <button className={css.button} onClick={() => handleDelete(contact.id)}>
+      <button className={css.button} onClick={() => onDeleteContact(id)}>
         Delete
       </button>
     </div>
